@@ -1,0 +1,11 @@
+{% extends "baseuser.html"%}
+{% block content %}
+
+{% if session.name %}
+Welcome {{session.name}}
+{% else %}
+Not Yet Login
+{% endif %}
+
+
+{% endblock %}

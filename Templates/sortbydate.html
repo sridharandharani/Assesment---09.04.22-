@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="d-flex justify-content-center">Search by date</div>
+      <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6">
+                <form action="/sort" method="post">
+                    <table class="table">
+                        <tr>
+                            <td>Date</td>
+                            <td><input type="date" name="date" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit" class="btn btn-success">Search</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                {% if status %}
+                <table class="table">
+                  <thead></thead>
+                    <tr>
+                      <th scope="col">Crime Description</th>
+                      <th scope="col">Remarks</th>
+                    </tr>
+
+                  </thead>
+                  <tbody>
+                      {% for i in crime %}
+                      <tr>
+                          <td>{{i[1]}}</td>
+                          <td>{{i[2]}}</td>
+
+                      </tr>
+                      {% endfor %}
+
+                  </tbody>
+                </table>
+
+
+                {% endif %}
+
+
+            </div>
+        </div>
+            </div>
+            {% endblock %}

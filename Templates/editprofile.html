@@ -1,0 +1,45 @@
+{% extends "baseuser.html" %}
+{% block content %}
+<div class="container">
+    <div class="row"><div class="col col-sm-6 col-md-8 col-lg-10 col-xl-12 col-xxl-12">
+        <form action="/update" method="post"><table class="table">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="newname" class="form-control"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-warning">Edit</button></td>
+            </tr>
+        </table></form>
+        <form action="/edit" method="post">
+            {% for i in searchname %}
+            <table class="table">
+            <tr>
+                <td>Name</td>
+                <td><input readonly value="{{i[1]}}" type="text" name="newname" id=""  class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input value="{{i[2]}}" type="text" name="newaddress" id="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Email-Id</td>
+                <td><input value="{{i[3]}}" type="text" name="newemail" id="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input value="{{i[4]}}" type="text" name="newphone" id="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input value="{{i[5]}}" type="password" name="newpass" id=""></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Edit</button></td>
+            </tr>
+        </table>
+        {% endfor %}</form>
+    </div></div></div>
+{% endblock %}
